@@ -1,24 +1,14 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+// Self-hosted via Fontsource (same families, no build-time Google fetch,
+// which Turbopack builds on Vercel intermittently fail to resolve).
+import "@fontsource-variable/space-grotesk";
+import "@fontsource-variable/inter";
 import "./globals.css";
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_ORIGIN, site } from "@/data/site";
-
-const display = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const body = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
@@ -130,7 +120,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={site.htmlLang} className={`${display.variable} ${body.variable}`}>
+    <html lang={site.htmlLang}>
       <body className="min-h-dvh bg-bg text-foreground antialiased">
         <a
           href="#main"

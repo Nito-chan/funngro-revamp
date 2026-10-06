@@ -94,7 +94,7 @@ export const metadata: Metadata = {
 export default function BrandsPage() {
   return (
     <>
-      <Navbar variant="brands" />
+
 
       <main id="main">
         {/* hero */}
@@ -416,7 +416,7 @@ export default function BrandsPage() {
         </section>
       </main>
 
-      <Footer />
+
       <JsonLd data={faqJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
     </>

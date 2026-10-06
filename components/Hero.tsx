@@ -4,8 +4,8 @@ import { ButtonRow, DemoBadge, Eyebrow } from "@/components/primitives";
 /**
  * Youth hero.
  *
- * Server component. The scrolling activity rows are a CSS marquee, so they need
- * no JavaScript and stop automatically under prefers-reduced-motion.
+ * The scrolling activity rows are a CSS marquee, so they need
+ * no heavy JS and stop automatically under prefers-reduced-motion.
  */
 export function Hero() {
   const ticker = [...demoActivity, ...demoActivity];

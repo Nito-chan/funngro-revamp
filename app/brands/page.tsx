@@ -112,7 +112,7 @@ export default function BrandsPage() {
           />
 
           <div className="shell relative py-20 md:py-28">
-            <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+            <div className="grid min-w-0 items-center gap-14 [&>*]:min-w-0 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
               <div>
                 <p className="eyebrow">{hero.eyebrow}</p>
                 <h1 className="mt-4 text-[2.4rem] font-bold leading-[1.08] tracking-tight sm:text-6xl lg:text-[4.25rem]">

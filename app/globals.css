@@ -93,6 +93,10 @@
     -webkit-text-size-adjust: 100%;
   }
 
+  html {
+    overflow-x: clip;
+  }
+
   body {
     background-color: var(--color-bg);
     color: var(--color-foreground);

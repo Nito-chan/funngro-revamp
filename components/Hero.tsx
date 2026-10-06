@@ -23,8 +23,8 @@ export function Hero() {
       />
 
       <div className="shell relative py-20 md:py-28">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-          <div>
+        <div className="grid min-w-0 items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+          <div className="min-w-0">
             <div className="animate-fade-up">
               <Eyebrow>{hero.eyebrow}</Eyebrow>
             </div>
@@ -47,7 +47,7 @@ export function Hero() {
           </div>
 
           {/* demo card */}
-          <div className="relative animate-scale-in delay-200">
+          <div className="relative min-w-0 animate-scale-in delay-200">
             <div
               aria-hidden="true"
               className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/15 via-transparent to-accent-soft/10 blur-2xl"
@@ -75,7 +75,7 @@ export function Hero() {
               </div>
 
               {/* activity rows */}
-              <div className="mask-fade-x mt-6 overflow-hidden">
+              <div className="mask-fade-x mt-6 min-w-0 max-w-full overflow-hidden">
                 <ul className="flex w-max animate-marquee gap-2">
                   {ticker.map((row, i) => (
                     <li

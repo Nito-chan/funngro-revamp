@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 
 import { contact, liveSite, storeLinks } from "@/data/site";
 
@@ -55,12 +56,12 @@ export function NavLinks({
   );
 }
 
-export function Navbar({
-  variant = "youth",
-}: {
-  variant?: NavVariant;
-}) {
-  const isBrands = variant === "brands";
+export function Navbar({ variant }: { variant?: NavVariant }) {
+  const pathname = usePathname();
+  const resolvedVariant: NavVariant =
+    variant ?? (pathname?.startsWith("/brands") ? "brands" : "youth");
+  const isBrands = resolvedVariant === "brands";
+  const variantForLinks: NavVariant = resolvedVariant;
   const otherHref = isBrands ? "/" : "/brands";
   const otherLabel = isBrands ? "For youth" : "For brands";
   const ctaHref = isBrands ? `mailto:${contact.brands}` : storeLinks.play;
@@ -92,7 +93,10 @@ export function Navbar({
 
         {/* desktop nav */}
         <div className="hidden items-center gap-8 lg:flex">
-          <NavLinks variant={variant} className="flex items-center gap-6" />
+          <NavLinks
+            variant={variantForLinks}
+            className="flex items-center gap-6"
+          />
           <span aria-hidden="true" className="h-5 w-px bg-line" />
           <div className="flex items-center gap-5">
             <Link
@@ -143,7 +147,7 @@ export function Navbar({
             <div className="absolute right-0 top-11 w-56 rounded-panel border border-line bg-surface-2 p-3 shadow-2xl">
               <nav aria-label="Mobile">
                 <NavLinks
-                  variant={variant}
+                  variant={variantForLinks}
                   className="flex flex-col gap-1 [&_a]:block [&_a]:px-3 [&_a]:py-2.5 [&_a]:text-base"
                 />
               </nav>

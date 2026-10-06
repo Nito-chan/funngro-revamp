@@ -96,7 +96,7 @@ export default function BrandsPage() {
     <>
 
 
-      <main id="main">
+      <div>
         {/* hero */}
         <section className="relative overflow-hidden">
           <div
@@ -123,7 +123,7 @@ export default function BrandsPage() {
                 <div className="mt-9">
                   <div className="flex flex-col gap-3 sm:flex-row">
                     <a
-                      href={`mailto:${hero.primaryCta.href}`}
+                      href={hero.primaryCta.href}
                       className="inline-flex h-12 items-center justify-center rounded-full bg-accent px-7 text-center font-semibold text-on-accent transition-colors hover:bg-accent-strong"
                     >
                       {hero.primaryCta.label}
@@ -414,7 +414,7 @@ export default function BrandsPage() {
         <section className="shell pb-16">
           <p className="text-center text-xs text-faint">{site.disclaimer}</p>
         </section>
-      </main>
+      </div>
 
 
       <JsonLd data={faqJsonLd} />

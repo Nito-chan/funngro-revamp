@@ -120,7 +120,7 @@ export function Footer() {
           <p className="mt-2 max-w-3xl">
             Statistics shown on this site are Funngro&apos;s own published figures
             and are reproduced with attribution. Sample figures labelled
-            &ldquo;Illustrative demo data&rdquo; are invented for layout purposes
+            &ldquo;Illustrative demo data&rdquo; are for layout purposes only.
             and are not Funngro metrics. For official terms, payouts and account
             rules, rely on{" "}
             <a

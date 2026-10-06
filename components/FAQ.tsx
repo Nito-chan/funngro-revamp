@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 
 import { SectionHeading } from "@/components/primitives";
@@ -36,8 +39,15 @@ export function FAQ({
           lead={lead}
         />
         <div className="mx-auto mt-12 max-w-3xl divide-y divide-line overflow-hidden rounded-panel border border-line bg-surface">
-          {items.map((item) => (
-            <details key={item.question} className="group">
+          {items.map((item, i) => (
+            <motion.details
+              key={item.question}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.4, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
+              className="group"
+            >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-surface-2 [&::-webkit-details-marker]:hidden">
                 <h3 className="font-display text-base font-semibold sm:text-lg">
                   {item.question}
@@ -52,7 +62,7 @@ export function FAQ({
                   {item.answer}
                 </p>
               </div>
-            </details>
+            </motion.details>
           ))}
         </div>
       </div>

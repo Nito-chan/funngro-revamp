@@ -1,4 +1,7 @@
+"use client";
+
 import type { ReactNode } from "react";
+import { motion } from "motion/react";
 
 import { getIcon } from "@/components/Icon";
 
@@ -101,15 +104,19 @@ export function Card({
   interactive?: boolean;
 }) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`panel-solid ${
         interactive
-          ? "transition-colors duration-300 hover:border-line-strong focus-within:border-line-strong"
+          ? "transition-colors duration-300 hover:border-line-strong focus-within:border-line-strong hover:-translate-y-0.5"
           : ""
-      } p-6 ${className}`}
+      } ${className}`}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
 

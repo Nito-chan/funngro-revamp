@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 import { contact, liveSite, storeLinks } from "@/data/site";
 
@@ -64,7 +67,12 @@ export function Navbar({
   const ctaLabel = isBrands ? "Talk to Funngro" : "Get the app";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line/70 bg-bg/85 backdrop-blur-xl">
+    <motion.header
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      className="sticky top-0 z-50 border-b border-line/70 bg-bg/85 backdrop-blur-xl"
+    >
       <div className="shell flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
@@ -160,6 +168,6 @@ export function Navbar({
           </details>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

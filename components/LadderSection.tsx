@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import { earningsLadder } from "@/data/youthData";
 import { SectionHeading } from "@/components/primitives";
 

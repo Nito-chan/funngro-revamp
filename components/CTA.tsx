@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import { ButtonRow, SectionHeading } from "@/components/primitives";
 
 /** Final call-to-action. */
@@ -20,21 +23,33 @@ export function CTA({
             aria-hidden="true"
             className="pointer-events-none absolute -top-24 left-1/2 size-[28rem] -translate-x-1/2 rounded-full bg-accent/12 blur-[110px]"
           />
-          <div className="relative mx-auto max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="relative mx-auto max-w-2xl"
+          >
             <SectionHeading
               id="cta-heading"
               align="center"
               title={title}
               lead={body}
             />
-            <div className="mt-9 flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mt-9 flex justify-center"
+            >
               <ButtonRow
                 primary={primary}
                 secondary={secondary}
                 center={true}
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

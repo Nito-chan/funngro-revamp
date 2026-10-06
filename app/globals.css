@@ -225,6 +225,62 @@
       );
     background-size: 64px 64px;
   }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.7s var(--ease-out-soft) both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.9s var(--ease-out-soft) both;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.9s var(--ease-out-soft) both;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
 }
 
 /* Motion is decoration only: everything below renders identically without it. */
@@ -239,6 +295,7 @@
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    animation-delay: 0 !important;
   }
 
   .mask-fade-x {

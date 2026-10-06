@@ -25,25 +25,29 @@ export function Hero() {
       <div className="shell relative py-20 md:py-28">
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div>
-            <Eyebrow>{hero.eyebrow}</Eyebrow>
-            <h1 className="mt-4 text-[2.5rem] font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.25rem]">
+            <div className="animate-fade-up">
+              <Eyebrow>{hero.eyebrow}</Eyebrow>
+            </div>
+            <h1 className="mt-4 animate-fade-up delay-100 text-[2.5rem] font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-[4.25rem]">
               Your skills deserve{" "}
               <span className="text-gradient">more than likes.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">
+            <p className="mt-6 animate-fade-up delay-200 max-w-xl text-base leading-relaxed text-muted md:text-lg">
               {hero.lead}
             </p>
-            <div className="mt-9">
+            <div className="mt-9 animate-fade-up delay-300">
               <ButtonRow
                 primary={hero.primaryCta}
                 secondary={hero.secondaryCta}
               />
             </div>
-            <p className="mt-5 text-sm text-faint">{hero.footnote}</p>
+            <p className="mt-5 animate-fade-up delay-400 text-sm text-faint">
+              {hero.footnote}
+            </p>
           </div>
 
           {/* demo card */}
-          <div className="relative">
+          <div className="relative animate-scale-in delay-200">
             <div
               aria-hidden="true"
               className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/15 via-transparent to-accent-soft/10 blur-2xl"

@@ -15,25 +15,17 @@ export function WhySection() {
           title={whyFunngro.title}
           lead={whyFunngro.intro}
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {whyFunngro.cards.map((card, i) => (
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <Card key={card.title}>
-                <IconTile name={card.icon} />
-                <h3 className="mt-5 font-display text-lg font-semibold">
-                  {card.title}
-                </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted">
-                  {card.body}
-                </p>
-              </Card>
-            </motion.div>
+            <Card key={card.title}>
+              <IconTile name={card.icon} />
+              <h3 className="mt-5 font-display text-lg font-semibold">
+                {card.title}
+              </h3>
+              <p className="mt-2.5 text-sm leading-relaxed text-muted">
+                {card.body}
+              </p>
+            </Card>
           ))}
         </div>
       </div>

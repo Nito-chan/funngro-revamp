@@ -66,25 +66,31 @@ export function ButtonRow({
     <div
       className={`flex flex-col gap-3 sm:flex-row ${center ? "justify-center" : ""}`}
     >
-      <a
+      <motion.a
         href={primary.href}
-        className="inline-flex h-12 items-center justify-center rounded-full bg-accent px-7 text-center font-semibold text-on-accent transition-colors hover:bg-accent-strong"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.995 }}
+        transition={{ duration: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        className="inline-flex h-12 items-center justify-center whitespace-nowrap rounded-full bg-accent px-7 text-center text-sm font-semibold text-on-accent transition-colors hover:bg-accent-strong sm:text-base"
         {...(isExternal(primary.href)
           ? { target: "_blank", rel: "noopener noreferrer" }
           : {})}
       >
         {primary.label}
-      </a>
+      </motion.a>
       {secondary ? (
-        <a
-          href={secondary.href}
-          className="inline-flex h-12 items-center justify-center rounded-full border border-line-strong px-7 text-center font-semibold text-foreground transition-colors hover:border-accent hover:text-accent"
-          {...(isExternal(secondary.href)
-            ? { target: "_blank", rel: "noopener noreferrer" }
-            : {})}
-        >
-          {secondary.label}
-        </a>
+          <motion.a
+            href={secondary.href}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.995 }}
+            transition={{ duration: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="inline-flex h-12 items-center justify-center whitespace-nowrap rounded-full border border-line bg-surface px-7 text-center text-sm font-semibold transition-colors hover:bg-surface-2 sm:text-base"
+            {...(isExternal(secondary.href)
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+          >
+            {secondary.label}
+          </motion.a>
       ) : null}
     </div>
   );

@@ -1,22 +1,9 @@
 import type { MetadataRoute } from "next";
 
-import { absoluteUrl } from "@/data/site";
-
+/**
+ * Intentionally empty: v1 is noindexed (duplicate-content protection, the
+ * indexable canonical revamp lives in the v2 project), so it submits no URLs.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
-  return [
-    {
-      url: absoluteUrl("/"),
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: absoluteUrl("/brands"),
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-  ];
+  return [];
 }

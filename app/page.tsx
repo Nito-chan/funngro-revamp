@@ -44,9 +44,11 @@ const breadcrumbJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Funngro for Youth | Earn Online With India's Top Brands",
+  title: {
+    absolute: "Funngro for Youth | Earn Online With India's Top Brands",
+  },
   description:
-    "Complete real brand campaigns, build your portfolio and get paid by UPI. Funngro connects 70 lakh young Indians with 5,000+ brands. Unofficial redesign concept.",
+    "Complete real brand campaigns, build your portfolio and get paid by UPI. Funngro connects 70 lakh young Indians with 5,000+ brands.",
   alternates: {
     canonical: "/",
   },
@@ -58,12 +60,13 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
+    card: "summary_large_image",
     title: "Funngro for Youth | Earn Online With India's Top Brands",
     description:
       "Complete real brand campaigns, build your portfolio and get paid by UPI. Funngro connects 70 lakh young Indians with 5,000+ brands.",
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
   },
 };

@@ -61,7 +61,9 @@ const breadcrumbJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Funngro for Brands | Reach India's Young Consumers",
+  title: {
+    absolute: "Funngro for Brands | Reach India's Young Consumers",
+  },
   description:
     "Run authentic youth campaigns: brand promotion, content, referrals, sampling and surveys with Funngro's 70 lakh young earners.",
   alternates: {
@@ -75,12 +77,13 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
+    card: "summary_large_image",
     title: "Funngro for Brands | Reach India's Young Consumers",
     description:
       "Run authentic youth campaigns with Funngro's 70 lakh young earners. Pay for verified actions, not impressions.",
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
   },
 };

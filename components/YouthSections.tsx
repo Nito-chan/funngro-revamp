@@ -57,7 +57,7 @@ export function HowItWorksSection() {
                   className="absolute left-[calc(50%+2.5rem)] top-7 hidden h-px w-[calc(100%-1rem)] bg-gradient-to-r from-line-strong to-line lg:block"
                 />
               ) : null}
-              <div className="panel-solid h-full p-7">
+              <div className="panel-solid h-full p-6 sm:p-8">
                 <span className="font-display text-sm font-bold tracking-widest text-accent">
                   {step.n}
                 </span>
@@ -248,7 +248,7 @@ export function TrustSection() {
             />
             <ul className="mt-10 grid gap-5 sm:grid-cols-2">
               {trust.points.map((point) => (
-                <li key={point.title} className="panel-solid p-5">
+                <li key={point.title} className="panel-solid p-6 sm:p-7">
                   <h3 className="font-display text-base font-semibold">
                     {point.title}
                   </h3>
@@ -261,7 +261,7 @@ export function TrustSection() {
           </div>
 
           {/* growth figures, attributed to the live site */}
-          <div className="panel-solid p-7">
+          <div className="panel-solid p-6 sm:p-8">
             <p className="eyebrow">Published growth</p>
             <ul className="mt-6 space-y-5">
               {trust.beforeAfter.map((row) => (

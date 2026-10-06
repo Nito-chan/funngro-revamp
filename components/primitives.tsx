@@ -115,7 +115,7 @@ export function Card({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className={`panel-solid ${
+      className={`panel-solid p-6 sm:p-8 ${
         interactive
           ? "transition-colors duration-300 hover:border-line-strong focus-within:border-line-strong hover:-translate-y-0.5"
           : ""
@@ -131,7 +131,7 @@ export function IconTile({ name }: { name: string }) {
   return (
     <span
       aria-hidden="true"
-      className="grid size-11 shrink-0 place-items-center rounded-xl border border-line bg-surface-2 text-accent"
+      className="mb-1 grid size-11 shrink-0 place-items-center rounded-xl border border-line bg-surface-2 text-accent"
     >
       <Icon className="size-5" strokeWidth={1.75} />
     </span>

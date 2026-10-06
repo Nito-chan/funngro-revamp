@@ -145,7 +145,7 @@ export default function BrandsPage() {
                   aria-hidden="true"
                   className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/12 via-transparent to-accent-soft/10 blur-2xl"
                 />
-                <div className="panel-solid relative overflow-hidden p-6">
+                <div className="panel-solid relative overflow-hidden p-6 sm:p-8">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="eyebrow">Pilot snapshot</p>
@@ -380,7 +380,7 @@ export default function BrandsPage() {
             />
             <ol className="mt-14 grid gap-6 md:grid-cols-4">
               {process.steps.map((step) => (
-                <li key={step.n} className="panel-solid h-full p-6">
+                <li key={step.n} className="panel-solid h-full p-6 sm:p-8">
                   <span className="font-display text-sm font-bold tracking-widest text-accent">
                     {step.n}
                   </span>
